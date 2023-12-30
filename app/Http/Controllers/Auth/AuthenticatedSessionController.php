@@ -25,12 +25,26 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        $credentials = $request->only('email', 'password');
 
-        $request->session()->regenerate();
-        $role = auth()->user()->roles;
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
 
-        return redirect()->intended($this->redirectBasedOnRole($role));
+            if ($user->is_active) {
+                $request->session()->regenerate();
+
+                $role = $user->roles;
+
+                return redirect()->intended($this->redirectBasedOnRole($role));
+            } else {
+                Auth::logout(); 
+                return redirect()->route('login')->with('status', 'Your account is not active');
+            }
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 
     protected function redirectBasedOnRole(string $role): string

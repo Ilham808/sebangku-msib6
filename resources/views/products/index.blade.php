@@ -115,6 +115,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            {{ $products->links('vendor.pagination.tailwind') }}
                         </div>
                     </div>
                 </div>

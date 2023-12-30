@@ -47,6 +47,7 @@
                 <option value="active">Active</option>
                 <option value="inactive">Non Active</option>
             </select>
+            <x-input-error class="mt-2" :messages="$errors->get('status')" />
         </div>
 
         <div class="flex items-center gap-4">

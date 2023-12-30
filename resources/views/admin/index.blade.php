@@ -14,7 +14,7 @@
                         <div class="flex-shrink pl-1 pr-4"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
                         <div class="flex-1 text-right">
                             <h5 class="text-white">Total Products</h5>
-                            <h3 class="text-white text-3xl">3249<span class="text-green-400"><i class="fas fa-caret-down"></i></span></h3>
+                            <h3 class="text-white text-3xl">{{ $count_products }}<span class="text-green-400"><i class="fas fa-caret-down"></i></span></h3>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         <div class="flex-shrink pl-1 pr-4"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
                         <div class="flex-1 text-right">
                             <h5 class="text-white">Total Users</h5>
-                            <h3 class="text-white text-3xl">13 <span class="text-blue-400"><i class="fas fa-caret-up"></i></span></h3>
+                            <h3 class="text-white text-3xl">{{ $count_users }} <span class="text-blue-400"><i class="fas fa-caret-up"></i></span></h3>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="flex-shrink pl-1 pr-4"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
                         <div class="flex-1 text-right">
                             <h5 class="text-white">Total Products Active</h5>
-                            <h3 class="text-white text-3xl">76 days</h3>
+                            <h3 class="text-white text-3xl">{{ $count_products_active }}</h3>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <div class="flex-shrink pl-1 pr-4"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
                         <div class="flex-1 text-right">
                             <h5 class="text-white">Total Users Active</h5>
-                            <h3 class="text-white text-3xl">7 tasks</h3>
+                            <h3 class="text-white text-3xl">{{ $count_users_active }}</h3>
                         </div>
                     </div>
                 </div>

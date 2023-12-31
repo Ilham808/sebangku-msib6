@@ -17,17 +17,11 @@
                         <!-- card header -->
 
                         @if (session()->has('error'))
-                            <x-alert-error bg-color="red-200" border-color="red-300" icon-bg-color="red-100"
-                                icon-border-color="red-500" icon-color="red-500" title-color="red-800"
-                                description-color="red-600" title="Error"
-                                description="{{ session()->get('error') }}" />
+                            <x-error-alert> {{ session()->get('error') }} </x-error-alert>
                         @endif
 
                         @if (session()->has('success'))
-                            <x-alert-success bg-color="green-200" border-color="green-300" icon-bg-color="green-100"
-                                icon-border-color="green-500" icon-color="green-500" title-color="green-800"
-                                description-color="green-600" title="Success"
-                                description="{{ session()->get('success') }}" />
+                            <x-success-alert> {{ session()->get('success') }} </x-success-alert>
                         @endif
 
                         <div
@@ -91,7 +85,7 @@
                                                         class="font-semibold text-light-inverse text-md/normal">{{ date('d F Y', strtotime($product->created_at)) }}</span>
                                                 </td>
                                                 <td class="p-3 pr-0 text-end">
-                                                   
+
                                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                         action="{{ route('product.destroy', $product->id) }}"
                                                         method="post">
@@ -101,7 +95,7 @@
                                                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                                             Edit
                                                         </a>
-                                                        
+
                                                         <!-- Tombol Delete -->
                                                         <button
                                                             class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"

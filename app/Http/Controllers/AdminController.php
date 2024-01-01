@@ -17,6 +17,7 @@ class AdminController extends Controller
                 'count_products_active' => Product::where('status', 'active')->count(),
                 'count_users' => User::count(),
                 'count_users_active' => User::where('is_active', true)->count(),
+                'list_new_products' => Product::orderBy('created_at', 'desc')->take(10)->get(),
             ]);
     }
 }
